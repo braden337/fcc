@@ -31,32 +31,31 @@ background-color: hsla(200, 10%, 75%, 1);
 
 <div class="container-fluid">
 
-  <div class="row">
-    
-    <h1 class="text-center">Pig Latin Translator</h1>
-    
-  </div>
-  
-  <div class="row">
-    
-    <div class="col-md-6 col-md-offset-3">
-      <pre class="javascript"></pre>
-    </div>
-    
-  </div>
-  
-  <div id="footer" class="row">
-    
-    <div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+<div class="row">
 
-			<div class="love text-center">
-				<small>Made with <span>&hearts;</span> by <a target="_blank" href="https://github.com/braden337">Braden</a></small>	
-			</div>
+<h1 class="text-center">Pig Latin Translator</h1>
 
-		</div>
-    
-  </div>
-  
+</div>
+
+<div class="row">
+
+<div class="col-md-6 col-md-offset-3">
+<pre class="javascript"></pre>
+</div>
+
+</div>
+
+<div id="footer" class="row">
+
+<div class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+<div class="love text-center">
+<small>Made with <span>&hearts;</span> by <a target="_blank" href="https://github.com/braden337">Braden</a></small>	
+</div>
+
+</div>
+
+</div>
+
 
 </div>
 
@@ -71,23 +70,23 @@ background-color: hsla(200, 10%, 75%, 1);
 
 <script>
 
-  function highlight() {
-    $('pre').each(function(i, block) {
-      hljs.highlightBlock(block);
-    });
-  }
-  function displayCode(data) {
-    $('.javascript').text(data);
-    highlight();
-  }
-  var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
-  var settings = {
-    contentType: 'text/plain',
-    success: displayCode
-  };
-  $(document).ready(function() {
-    $.ajax(url, settings);
-  });
-  
-  
+function highlight() {
+$('pre').each(function(i, block) {
+hljs.highlightBlock(block);
+});
+}
+function displayCode(data) {
+$('.javascript').text(data);
+highlight();
+}
+var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
+var settings = {
+contentType: 'text/plain',
+success: displayCode
+};
+$(document).ready(function() {
+$.ajax(url, settings);
+});
+
+
 </script>
