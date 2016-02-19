@@ -1,1 +1,20 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 <h3>Free Code Camp</h3>
+<pre>
+  <script>
+    function displayCode(data) {
+      document.write(data);
+    }
+  
+  
+    var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
+    var settings = {
+      contentType: 'text/plain',
+      success: displayCode
+    };
+    
+    $.ajax(url, settings);
+    
+  </script>
+</pre>
