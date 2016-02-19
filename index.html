@@ -1,13 +1,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/default.min.css">
 <script src="https://cdn.jsdelivr.net/highlight.js/9.1.0/highlight.min.js"></script>
 
-<script>hljs.initHighlightingOnLoad();</script>
+<script></script>
 
 <script>
   function displayCode(data) {
-    $('.javascript').html(data);
+    $('.javascript').text(data);
+    hljs.initHighlightingOnLoad();
   }
   var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
   var settings = {
@@ -16,7 +16,6 @@
   };
   
   $.ajax(url, settings);
-    
 </script>
 
 
