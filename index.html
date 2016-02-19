@@ -116,7 +116,7 @@
   
   function translateWord(e) {
     e.preventDefault();
-    $('#header h2').text(translate($('input').value()));
+    $('#header h2').text(translate($('input').val()));
   }
 
   function highlight() {
@@ -139,7 +139,7 @@
   
   $(document).ready(function() {
     $.ajax(url, settings);
-    $("#translator").submit(translateWord(e));
+    $("#translator").submit(translateWord);
   });
 
 
