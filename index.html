@@ -118,7 +118,7 @@
     e.preventDefault();
     var word = $('input').val();
     if (word)
-      $('#header h2').text(translate(word));
+      $('#header h2').text(translate(word).toLowerCase());
   }
 
   function highlight() {
