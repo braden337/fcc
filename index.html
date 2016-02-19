@@ -7,15 +7,19 @@
 <script>
   function displayCode(data) {
     $('.javascript').text(data);
-    hljs.highlightBlock($('.javascript'));
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
   }
   var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
   var settings = {
     contentType: 'text/plain',
     success: displayCode
   };
+  $(document).ready(function() {
+    $.ajax(url, settings);
+  });
   
-  $.ajax(url, settings);
 </script>
 
 
