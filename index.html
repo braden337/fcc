@@ -13,7 +13,7 @@
   }
   function displayCode(data) {
     $('.javascript').text(data);
-    // highlight();
+    highlight();
   }
   var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
   var settings = {
@@ -22,7 +22,6 @@
   };
   $(document).ready(function() {
     $.ajax(url, settings);
-    highlight();
   });
   
 </script>
