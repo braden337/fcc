@@ -61,10 +61,10 @@
     
     <div class="col-md-6 col-md-offset-3">
       
-      <form class="text-center">
+      <form id="translator" class="text-center">
         <div class="form-group">
           <!--<label for="input">Email address</label>-->
-          <input type="text" class="form-control" id="input">
+          <input type="text" class="form-control">
         </div>
         <button type="submit" class="btn btn-default">Translate</button>
       </form>
@@ -97,24 +97,50 @@
 
 
 <script>
+  function translate(word) {
+    var vowels = 'aeiou';
+    if (vowels.indexOf(word.split('')[0]) != -1)
+      word += 'way';
+    else {
+      word = word.split('');
+      var vowelsPresent = word.filter(function(x) {
+        return vowels.indexOf(x) != -1;
+      });
+      var firstVowel = word.indexOf(vowelsPresent[0]);
+      var end = word.splice(0, firstVowel)
+                    .concat('ay'.split(''));
+      word = word.concat(end).join('');
+    }
+    return word;
+  }
+  
+  function translateWord(e) {
+    e.preventDefault();
+    $('#header h2').text(translate($('input').value()));
+  }
 
-function highlight() {
-$('pre').each(function(i, block) {
-hljs.highlightBlock(block);
-});
-}
-function displayCode(data) {
-$('.javascript').text(data);
-highlight();
-}
-var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
-var settings = {
-contentType: 'text/plain',
-success: displayCode
-};
-$(document).ready(function() {
-$.ajax(url, settings);
-});
+  function highlight() {
+    $('pre').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  }
+  
+  function displayCode(data) {
+    $('.javascript').text(data);
+    highlight();
+  }
+  
+  var url = "https://raw.githubusercontent.com/braden337/freecodecamp/master/front-end/intermediate-algorithms/pig%20latin.js";
+  
+  var settings = {
+    contentType: 'text/plain',
+    success: displayCode
+  };
+  
+  $(document).ready(function() {
+    $.ajax(url, settings);
+    $("#translator").submit(translateWord);
+  });
 
 
 </script>
