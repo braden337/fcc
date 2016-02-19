@@ -116,7 +116,9 @@
   
   function translateWord(e) {
     e.preventDefault();
-    $('#header h2').text(translate($('input').val()));
+    var word = $('input').val();
+    if (word)
+      $('#header h2').text(translate(word));
   }
 
   function highlight() {
