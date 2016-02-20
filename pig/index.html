@@ -116,9 +116,12 @@
   
   function translateWord(e) {
     e.preventDefault();
+    var output = $('#header h2');
     var word = $('input').val();
     if (word)
-      $('#header h2').text(translate(word).toLowerCase());
+      output.text(translate(word).toLowerCase());
+    else
+      output.text('Pig Latin Translator');
   }
 
   function highlight() {
