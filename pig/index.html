@@ -114,12 +114,18 @@
     return word;
   }
   
-  function translateWord(e) {
+  function translateSentence(e) {
     e.preventDefault();
     var output = $('#header h2');
-    var word = $('input').val().toLowerCase();
-    if (word)
-      output.text(translate(word));
+    var words = $('input').val().toLowerCase();
+    if (words && words.indexOf(' ') != -1) {
+      var sentence = words.split(' ').map(function pigEach(word) {
+        return translate(word);
+      });
+      output.text(sentence.join(' '));
+    }
+    else if (words)
+      output.text(translate(words));
     else
       output.text('Pig Latin Translator');
   }
@@ -144,7 +150,7 @@
   
   $(document).ready(function() {
     $.ajax(url, settings);
-    $("#translator").submit(translateWord);
+    $("#translator").submit(translateSentence);
   });
 
 
