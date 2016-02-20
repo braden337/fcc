@@ -120,8 +120,10 @@
     var words = $('input').val().toLowerCase();
     if (words && words.indexOf(' ') != -1) {
       var sentence = words.split(' ').map(function pigEach(word) {
+        console.log(word);
         return translate(word);
       });
+      console.log(sentence);
       output.text(sentence.join(' '));
     }
     else if (words)
